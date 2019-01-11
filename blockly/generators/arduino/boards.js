@@ -141,6 +141,12 @@ Blockly.Arduino.Boards.profiles.nano_168 =
         'Arduino Nano 168',
         'Arduino Nano with ATmega168 compatible board',
         'arduino:avr:nano:cpu=atmega168');
+Blockly.Arduino.Boards.profiles.nano_328oBL =
+    Blockly.Arduino.Boards.duplicateBoardProfile(
+        Blockly.Arduino.Boards.profiles.nano_328,
+        'Arduino Nano 328 oBL',
+        'Arduino Nano with ATmega328 compatible board old bootloader',
+        'arduino:avr:nano:cpu=atmega328old');
 
 /** Arduino Duemilanove boards profile (ATmega168p, ATmega328p). */
 Blockly.Arduino.Boards.profiles.duemilanove_168p = {
