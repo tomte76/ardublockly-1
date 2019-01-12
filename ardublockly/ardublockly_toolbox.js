@@ -12,48 +12,24 @@ var Ardublockly = Ardublockly || {};
 Ardublockly.TOOLBOX_XML =
     '<xml>' +
     '  <sep></sep>' +
-    '   <category id="catSenseBox_Sensor" name="senseBox Sensors" colour="120">' +
-    '      <block type="sensebox_sensor_temp_hum"></block>' +
-    '      <block type="sensebox_sensor_uv_light"></block>' +
-    /*'      <block type="sensebox_sensor_bmx055_accelerometer"></block>' +
-    '      <block type="sensebox_sensor_bmx055_gyroscope"></block>' +
-    '      <block type="sensebox_sensor_bmx055_compass"></block>' + */
-    '      <block type="sensebox_sensor_sds011"></block>' +
-    '      <block type="sensebox_sensor_pressure"></block>' +
-    '      <block type="sensebox_sensor_ultrasonic_ranger">' +
+    '   <category id="catmcubase_Sensor" name="mcubase Sensoren" colour="180">' +
+    '      <block type="mcubase_sensor_ultrasonic_ranger">' +
     '           <field name="ultrasonic_trigger">1</field>' +
     '           <field name="ultrasonic_echo">2</field>' +
+    '           <field name="max_dist">200</field>' +
     '      </block>' +
-    '      <block type="sensebox_sensor_sound"></block>' +
-    '      <block type="sensebox_foto"></block>' +
-    '      <block type="sensebox_button"></block>' +
-    '      <block type="sensebox_poti"></block>' +
-    '      <block type="sensebox_gps_getValues"></block>' +
+    '      <block type="mcubase_sensor_sound"></block>' +
+    '      <block type="mcubase_foto"></block>' +
+    '      <block type="mcubase_button"></block>' +
+    '      <block type="mcubase_poti"></block>' +
     '   </category>' +
     '  <sep></sep>' +
-    '   <category id="catSenseBox_Output" name="senseBox Output" colour="120">' +
-    '       <block type="sensebox_led"></block>' +
-    '      <block type="sensebox_piezo"></block>' +
-    '      <block type="sensebox_rgb_led">' +
-    '        <value name="RED">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="GREEN">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="BLUE">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '      </block>' +
-    '      <block type="sensebox_serial_print"></block>' +
-    '      <block type="sensebox_interval_timer"></block>' +
-    '      <category id="catsenseBoxDisplay" name="Display" colour="120">' +
+    '   <category id="catmcubaseBox_Output" name="mcubase Ausgabe" colour="120">' +
+    '      <block type="mcubase_led"></block>' +
+    '      <block type="mcubase_piezo"></block>' +
+    '      <block type="mcubase_serial_print"></block>' +
+    '      <block type="mcubase_interval_timer"></block>' +
+/*    '      <category id="catsenseBoxDisplay" name="Display" colour="120">' +
     '      <block type="sensebox_display_beginDisplay"></block>' +
     '      <block type="sensebox_display_show"></block>' +
     '      <block type="sensebox_display_clearDisplay"></block>' +
@@ -132,7 +108,7 @@ Ardublockly.TOOLBOX_XML =
     '      <block type="sensebox_sd_create_file"></block>' +
     '      <block type="sensebox_sd_open_file"></block>' +
     '      <block type="sensebox_sd_write_file"></block>' +
-    '      </category>' +
+    '      </category>' + */
     '</category>' +
     '    <sep></sep>' +
     '   <category id="catLogic" name="Logic" colour="210">' +
