@@ -12,7 +12,7 @@ var Ardublockly = Ardublockly || {};
 Ardublockly.TOOLBOX_XML =
     '<xml>' +
     '  <sep></sep>' +
-    '   <category id="catmcubase_Sensor" name="mcubase Sensoren" colour="180">' +
+    '   <category id="catmcubase_Sensor" name="mcubase Sensoren" colour="120">' +
     '      <block type="mcubase_sensor_ultrasonic_ranger">' +
     '           <field name="ultrasonic_trigger">1</field>' +
     '           <field name="ultrasonic_echo">2</field>' +
@@ -24,93 +24,13 @@ Ardublockly.TOOLBOX_XML =
     '      <block type="mcubase_poti"></block>' +
     '   </category>' +
     '  <sep></sep>' +
-    '   <category id="catmcubaseBox_Output" name="mcubase Ausgabe" colour="120">' +
+    '   <category id="catmcubase_Output" name="mcubase Ausgabe" colour="120">' +
     '      <block type="mcubase_led"></block>' +
     '      <block type="mcubase_piezo"></block>' +
     '      <block type="mcubase_serial_print"></block>' +
     '      <block type="mcubase_interval_timer"></block>' +
-/*    '      <category id="catsenseBoxDisplay" name="Display" colour="120">' +
-    '      <block type="sensebox_display_beginDisplay"></block>' +
-    '      <block type="sensebox_display_show"></block>' +
-    '      <block type="sensebox_display_clearDisplay"></block>' +
-    '      <block type="sensebox_display_plotDisplay">' +
-    '           <value name="YLabel">' +
-    '               <block type="text">' +
-    '          </block>' +
-    '           </value>' +
-    '           <value name="XLabel">' +
-    '               <block type="text">' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="XRange1">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="XRange2">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">15</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="YRange1">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="YRange2">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">50</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="XTick">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">5</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="YTick">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="TimeFrame">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">15</field>' +
-    '          </block>' +
-    '        </value>' +
-    '       </block>' +
-    '      <block type="sensebox_display_printDisplay">' +
-    '         <value name="SIZE">' +
-    '       <block type="math_number">' +
-    '            <field name="NUM">1</field>' +
-    '          </block>' +
-    '        </value>' +
-    '       <value name="X">' +
-    '               <block type="math_number">' +
-    '                 <field name="NUM">0</field>' +
-    '          </block>' +
-    '        </value>' +
-    '        <value name="Y">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">0</field>' +
-    '          </block>' +
-    '       </value>' +
-    '      </block>' +
     '   </category>' +
     '  <sep></sep>' +
-    '      <category id="catsenseBoxOutput_Web" name="  web" colour="120">' +
-    '      <block type="sensebox_wifi"></block>' +
-    '      <block type="sensebox_osem_connection"></block>' +
-    '      <block type="sensebox_send_to_osem"></block>' +
-    '      <block type="sensebox_send_mobile_to_osem"></block>' +
-    '       </category>' +
-    '  <sep></sep>' +
-    '      <category id="catsenseBoxOutput_SD" name="   SD" colour="120">' +
-    '      <block type="sensebox_sd_create_file"></block>' +
-    '      <block type="sensebox_sd_open_file"></block>' +
-    '      <block type="sensebox_sd_write_file"></block>' +
-    '      </category>' + */
-    '</category>' +
-    '    <sep></sep>' +
     '   <category id="catLogic" name="Logic" colour="210">' +
     '    <block type="controls_if"></block>' +
     '    <block type="logic_compare"></block>' +

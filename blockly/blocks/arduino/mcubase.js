@@ -18,7 +18,7 @@ var wifiDepend = null;
  * "senseBox green"
  */
 
-Blockly.Blocks.mcubase.HUE = 100;
+Blockly.Blocks.mcubase.HUE = 120;
 
 /*
 ----------------------------------Sensoren--------------------------------------------------
@@ -198,9 +198,11 @@ Blockly.Blocks['mcubase_piezo'] = {
     this.setHelpUrl('https://sensebox.de/books');
   }
 };
+
 /*
 ----------------------------------Ausgabe--------------------------------------------------
 */
+
 Blockly.Blocks['mcubase_serial_print'] = {
   init: function() {
     this.appendValueInput("TEXT")
@@ -217,167 +219,20 @@ Blockly.Blocks['mcubase_serial_print'] = {
   }
 };
 
-/*senseBox Display Blocks
-
-Blockly.Blocks['sensebox_display_beginDisplay'] = {
+Blockly.Blocks['mcubase_interval_timer'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.senseBox_display_beginDisplay)
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(Blockly.Blocks.sensebox.HUE);
-    this.setTooltip(Blockly.Msg.senseBox_display_beginDisplay_tip);
-    this.setHelpUrl('https://sensebox.de/books');
-  }
-};
-
-Blockly.Blocks['sensebox_display_clearDisplay'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.senseBox_display_clearDisplay)
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(Blockly.Blocks.sensebox.HUE);
-    this.setTooltip(Blockly.Msg.senseBox_display_clearDisplay_tip);
-    this.setHelpUrl('https://sensebox.de/books');
-  }
-};
-
-Blockly.Blocks['sensebox_display_printDisplay'] = {
-  init: function(block) {
-    this.setColour(Blockly.Blocks.sensebox.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.senseBox_display_printDisplay)
-        .appendField(Blockly.Msg.senseBox_display_color)
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.senseBox_display_white, "WHITE,BLACK"], [Blockly.Msg.senseBox_display_black, "BLACK,WHITE"]]), "COLOR");
-    this.appendValueInput("SIZE", 'Number')
-        .appendField(Blockly.Msg.senseBox_display_setSize);
-    this.appendValueInput("X", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_printDisplay_x);
-    this.appendValueInput("Y", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_printDisplay_y);   
-    this.appendValueInput('printDisplay')
-        .appendField(Blockly.Msg.senseBox_display_printDisplay_value)
-        .setCheck(null);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.senseBox_display_printDisplay_tip);
-    this.setHelpUrl('https://sensebox.de/books');
-  },
-  /**
-   * Called whenever anything on the workspace changes.
-   * Add warning if block is not nested inside a the correct loop.
-   * @param {!Blockly.Events.Abstract} e Change event.
-   * @this Blockly.Block
-   */
-  onchange: function(e) {
-    var legal = false;
-    // Is the block nested in a loop?
-    var block = this;
-    do {
-      if (this.LOOP_TYPES.indexOf(block.type) != -1) {
-        legal = true;
-        break;
-      }
-      block = block.getSurroundParent();
-    } while (block);
-    if (legal) {
-      this.setWarningText(null);
-    } else {
-      this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
-    }
-  },
-  LOOP_TYPES: ['sensebox_display_show'],
-};
-
-
-Blockly.Blocks['sensebox_display_plotDisplay'] = {
-  init: function() {
-    this.setColour(Blockly.Blocks.sensebox.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.senseBox_display_plotDisplay)
-    this.appendValueInput("YLabel", 'Text')
-        .appendField(Blockly.Msg.senseBox_display_plotYLabel);
-    this.appendValueInput("XLabel", 'Text')
-        .appendField(Blockly.Msg.senseBox_display_plotXLabel);
-    this.appendValueInput("XRange1", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotXRange1);
-    this.appendValueInput("XRange2", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotXRange2)
-    this.appendValueInput("YRange1", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotYRange1);
-    this.appendValueInput("YRange2", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotYRange2);
-    this.setInputsInline(false);
-    this.appendValueInput("XTick", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotXTick);
-    this.appendValueInput("YTick", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotYTick);
-    this.appendValueInput("TimeFrame", 'Number')
-            .appendField(Blockly.Msg.senseBox_display_plotTimeFrame);     
-    this.appendValueInput('plotDisplay')
-        .appendField(Blockly.Msg.senseBox_display_printDisplay_value)
-        .setCheck(null);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.senseBox_display_printDisplay_tip);
-    this.setHelpUrl('https://sensebox.de/books');
-  },
-  /**
-   * Called whenever anything on the workspace changes.
-   * Add warning if block is not nested inside a the correct loop.
-   * @param {!Blockly.Events.Abstract} e Change event.
-   * @this Blockly.Block
-   */
-  onchange: function(e) {
-    var legal = false;
-    // Is the block nested in a loop?
-    var block = this;
-    do {
-      if (this.LOOP_TYPES.indexOf(block.type) != -1) {
-        legal = true;
-        break;
-      }
-      block = block.getSurroundParent();
-    } while (block);
-    if (legal) {
-      this.setWarningText(null);
-    } else {
-      this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
-    }
-  },
-  LOOP_TYPES: ['sensebox_display_show'],
-};
-
-Blockly.Blocks['sensebox_display_show'] = {
-  init: function() {
-    
-    this.setColour(Blockly.Blocks.sensebox.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.sensebox_display_show);
-    this.appendStatementInput('SHOW');
-    this.setTooltip(Blockly.Msg.sensebox_display_show_tip);
+    this.setTooltip(Blockly.Msg.mcubase_interval_timer_tip);
     this.setHelpUrl('');
+    this.setColour(Blockly.Blocks.mcubase.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.mcubase_interval_timer);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_LEFT)
+      .appendField(new Blockly.FieldTextInput("1000"), "interval")
+      .appendField(Blockly.Msg.mcubase_interval);
+    this.appendStatementInput('DO')
+      .setCheck(null);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-        }
-  }; */
-
-
-  Blockly.Blocks['mcubase_interval_timer'] = {
-    init: function() {
-      this.setTooltip(Blockly.Msg.mcubase_interval_timer_tip);
-      this.setHelpUrl('');
-      this.setColour(Blockly.Blocks.mcubase.HUE);
-      this.appendDummyInput()
-          .appendField(Blockly.Msg.mcubase_interval_timer);
-      this.appendDummyInput()
-          .setAlign(Blockly.ALIGN_LEFT)
-          .appendField(new Blockly.FieldTextInput("1000"), "interval")
-          .appendField(Blockly.Msg.mcubase_interval);
-      this.appendStatementInput('DO')
-          .setCheck(null);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-          }
-    };
+  }
+};
