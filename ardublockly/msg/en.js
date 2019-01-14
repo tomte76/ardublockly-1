@@ -1,7 +1,7 @@
 var Ardublockly = Ardublockly || {};
 Ardublockly.LOCALISED_TEXT = {
   translationLanguage: "English",
-  title: "senseBox",
+  title: "mcuBase",
   blocks: "Blocks",
   /* Menu */
   open: "Open Blocks",
@@ -106,7 +106,11 @@ Ardublockly.LOCALISED_TEXT = {
   catsenseBoxDisplay:"Display",
   catsenseBoxOutput_SD:"SD",
   catsenseBoxOutput_Web:"Web",
-  catLogic: "Logic",
+  catmcubase_Sensor:"senseBox sensors",
+  catmcubase_Output:"senseBox output",
+  catmcubaseDisplay:"Display",
+  catmcubaseOutput_SD:"SD",
+  catmcubaseOutput_Web:"Web",
   catLoops: "Loops",
   catMath: "Math",
   catText: "Text",
