@@ -3,7 +3,7 @@
     author": tomte76 dt@admindu.de
     lastupdated": 2019
     for more information: www.admindu.de
-*/  
+*/
 
 'use strict';
 
@@ -54,10 +54,10 @@ Blockly.Blocks['mcubase_sensor_ultrasonic_ranger'] = {
    * Parse XML to restore the number of pins available.
    * @param {!Element} xmlElement XML storage element.
    * @this Blockly.Block
-   
+
   domToMutation: function(xmlElement) {
     var input = (xmlElement.getAttribute('port'));
-    
+
   },*
   /**
    * Create XML to represent number of pins selection.
@@ -81,15 +81,15 @@ Blockly.Blocks['mcubase_sensor_ultrasonic_ranger'] = {
     var input = this.getFieldValue('port');
     switch (input){
       case 'A':
-      this.setFieldValue('1','ultrasonic_trigger');  
+      this.setFieldValue('1','ultrasonic_trigger');
       this.setFieldValue('2','ultrasonic_echo');
       break;
       case 'B':
-      this.setFieldValue('3','ultrasonic_trigger');  
+      this.setFieldValue('3','ultrasonic_trigger');
       this.setFieldValue('4','ultrasonic_echo');
       break;
       case 'C':
-      this.setFieldValue('5','ultrasonic_trigger');  
+      this.setFieldValue('5','ultrasonic_trigger');
       this.setFieldValue('6','ultrasonic_echo');
       break;
     }
