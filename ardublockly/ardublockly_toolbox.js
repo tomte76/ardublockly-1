@@ -13,11 +13,11 @@ Ardublockly.TOOLBOX_XML =
     '<xml>' +
     '  <sep></sep>' +
     '   <category id="catmcubase_Sensor" name="mcubase Sensoren" colour="120">' +
-/*    '      <block type="mcubase_sensor_ultrasonic_ranger">' +
+    '      <block type="mcubase_sensor_ultrasonic_ranger">' +
     '           <field name="ultrasonic_trigger">1</field>' +
     '           <field name="ultrasonic_echo">2</field>' +
     '           <field name="max_dist">200</field>' +
-    '      </block>' + */
+    '      </block>' +
     '      <block type="mcubase_sensor_sound"></block>' +
     '      <block type="mcubase_foto"></block>' +
     '      <block type="mcubase_button"></block>' +
