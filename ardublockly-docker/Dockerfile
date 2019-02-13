@@ -27,6 +27,8 @@ RUN adduser --gecos 'Ardublockly Build' --disabled-password build
 
 # Ardublocky GIT & Build
 RUN su - build -c "git clone https://github.com/tomte76/ardublockly-1.git"
+# if building a branch check it out here
+RUN su - build -c "cd ardublockly-1 && git checkout new-package"
 RUN su - build -c "cd ardublockly-1 && git submodule update --init --recursive"
 RUN su - build -c "mkdir -p ardublockly-1/docs/"
 RUN su - build -c "cd ardublockly-1/blockly && python build.py"
