@@ -1,30 +1,15 @@
-# Blockly for senseBox
-Blockly for senseBox is a visual programming editor for the senseBox:edu. It is based on Google's [Blockly](https://developers.google.com/blockly/) and carlosperates [Ardublockly](https://github.com/carlosperate/ardublockly), which has been forked.
+# Blockly for Kids
+Blockly for Kids is a visual programming editor for cheap Arduino parts from onine shops. It is based on Google's [Blockly](https://developers.google.com/blockly/), carlosperates [Ardublockly](https://github.com/carlosperate/ardublockly) and the [sensbox.edu Project](https://sensebox.de), which has been forked.
 
 ## Features
 * Generates Arduino code with visual drag-and-drop blocks
-* online Compiler for the senseBox MCU
 * Useful "code block warnings"
-* Works online without Installation and offline on Windows / Linux / Mac OS X (testing purpose only at the moment!)
-* 
+* Works online without installation and offline on Linux
 
-If you find erros, enhancement or want to request new features submit a new [issue](https://github.com/sensebox/ardublockly-1/issues). 
-
-
-## Running Online
-1. Go to [Blockly for senseBox](https://blockly.sensebox.de/) pick the senseBox MCU.
-2. Drag and Drop Blocks to the Workspace, hit compile and copy the .bin to your senseBox MCU
-
-#### Blockly for senseBox
-![Screenshot](https://github.com/sensebox/ardublockly-1/blob/master/assets/imgs/screenshot.png)
-
-
-## Documentation
-Documentation can be found online in German and English: [Blockly Book](https://sensebox.github.io/books-v2/blockly/)
-
+If you find erros, enhancement or want to request new features submit a new [issue](https://github.com/tomte76/ardublockly-1/issues).
 
 ## Credits
-This project has been inspired by [BlocklyDuino](https://github.com/BlocklyDuino/BlocklyDuino) and is a fork of [Ardublockly](https://github.com/carlosperate/ardublockly)
+This project has been inspired by [BlocklyDuino](https://github.com/BlocklyDuino/BlocklyDuino) and is a fork of [Ardublockly](https://github.com/carlosperate/ardublockly). Some work is done by the [sensbox.edu Project](https://sensebox.de).
 
 Blockly original source is Copyright of Google Inc. [https://developers.google.com/blockly/][1].
 
@@ -42,7 +27,7 @@ licensed under the Apache License, Version 2.0 (the "License");
 you may not use any of the licensed files within this project
 except in compliance with the License.
 
-The full document can be found in the [LICENSE](https://github.com/sensebox/ardublockly-1/blob/master/LICENSE) file.
+The full document can be found in the [LICENSE](https://github.com/tomte76/ardublockly-1/blob/master/LICENSE) file.
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
