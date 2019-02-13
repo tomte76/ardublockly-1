@@ -36,8 +36,6 @@ RUN su - build -c "cd ardublockly-1 && python3 package/build_docs.py"
 RUN su - build -c "cd ardublockly-1 && python3 package/build_pyinstaller.py linux"
 RUN su - build -c "cd ardublockly-1/package/electron && npm install"
 RUN su - build -c "cd ardublockly-1/package/electron && npm run release"
-ADD files/libpangoft2-1.0.so.0 /home/build/ardublockly-1/arduexec
-ADD files/libpangoft2-1.0.so.0.4000.5 /home/build/ardublockly-1/arduexec
 RUN su - build -c "cd ardublockly-1 && python3 package/pack_ardublockly.py"
 
 ADD files/init.sh /sbin/init.sh
