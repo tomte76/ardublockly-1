@@ -1,5 +1,5 @@
 # Blockly for Kids
-Blockly for Kids is a visual programming editor for cheap Arduino parts from onine shops. It is based on Google's [Blockly](https://developers.google.com/blockly/), carlosperates [Ardublockly](https://github.com/carlosperate/ardublockly) and the [sensbox.edu Project](https://sensebox.de), which has been forked.
+Blockly for Kids is a visual programming editor for cheap Arduino parts from online shops. It is based on Google's [Blockly](https://developers.google.com/blockly/), carlosperates [Ardublockly](https://github.com/carlosperate/ardublockly) and the [sensbox.edu Project](https://sensebox.de), which has been forked.
 
 ## Features
 * Generates Arduino code with visual drag-and-drop blocks
