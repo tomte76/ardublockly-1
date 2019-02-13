@@ -141,7 +141,7 @@ Blockly.Arduino.Boards.profiles.nano_168 =
         'Arduino Nano 168',
         'Arduino Nano with ATmega168 compatible board',
         'arduino:avr:nano:cpu=atmega168');
-Blockly.Arduino.Boards.profiles.nano_328oBL =
+Blockly.Arduino.Boards.profiles.nano_328_obl =
     Blockly.Arduino.Boards.duplicateBoardProfile(
         Blockly.Arduino.Boards.profiles.nano_328,
         'Arduino Nano 328 oBL',
@@ -330,9 +330,9 @@ Blockly.Arduino.Boards.profiles.sensebox_mcu = {
   digitalPins: [['D1', '1'], ['D2', '2'], ['D3', '3'], ['D4', '4'], ['D5', '5'], ['D6', '6']],
   pwmPins: [['D1', '1'], ['D2', '2'], ['D3', '3'], ['D4', '4'], ['D5', '5'], ['D6', '6']],
   serial: [['serial','SerialUSB'],['serial_1', 'Serial1'], ['serial_2', 'Serial2']],
-  serialPins: { 
-                SerialUSB: [['RX', ''], ['TX', '']], 
-                Serial1: [['RX', '11'], ['TX', '10']], 
+  serialPins: {
+                SerialUSB: [['RX', ''], ['TX', '']],
+                Serial1: [['RX', '11'], ['TX', '10']],
                 Serial2: [['RX', '13'], ['TX', '12']]},
   serialSpeed: [['300', '300'], ['600', '600'], ['1200', '1200'],
                 ['2400', '2400'], ['4800', '4800'], ['9600', '9600'],
