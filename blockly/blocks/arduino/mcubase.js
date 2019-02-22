@@ -144,7 +144,7 @@ Blockly.Blocks['mcubase_foto'] = {
         .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.analogPins), "PIN")
     this.setOutput(true, Blockly.Types.NUMBER.output);
     this.setTooltip(Blockly.Msg.mcubase_foto_tip);
-    this.setHelpUrl('https://sensebox.de/books');
+    this.setHelpUrl('https://www.mcubase.de');
   },
   getBlockType: function() {
     return Blockly.Types.NUMBER;
@@ -163,7 +163,7 @@ Blockly.Blocks['mcubase_led'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.mcubase_led_tip);
-    this.setHelpUrl('https://sensebox.de/books');
+    this.setHelpUrl('https://www.mcubase.de');
   }
 };
 
@@ -176,7 +176,7 @@ Blockly.Blocks['mcubase_button'] = {
     this.setOutput(true, Blockly.Types.BOOLEAN.output);
     this.setColour(Blockly.Blocks.mcubase.HUE);
     this.setTooltip(Blockly.Msg.mcubase_button_tip);
-    this.setHelpUrl('https://sensebox.de/books');
+    this.setHelpUrl('https://www.mcubase.de');
   },
   getBlockType: function() {
     return Blockly.Types.BOOLEAN;
@@ -195,7 +195,27 @@ Blockly.Blocks['mcubase_piezo'] = {
     this.setNextStatement(true, null);
     this.setColour(Blockly.Blocks.mcubase.HUE);
     this.setTooltip(Blockly.Msg.mcubase_piezo_tip);
-    this.setHelpUrl('https://sensebox.de/books');
+    this.setHelpUrl('https://www.mcubase.de');
+  }
+};
+
+Blockly.Blocks['mcubase_rgb_led'] = {
+  init: function() {
+    this.setColour(Blockly.Blocks.sensebox.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.senseBox_rgb_led)
+        .appendField("PIN:")
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), "PIN")
+        this.appendValueInput("RED", 'Number')
+            .appendField(Blockly.Msg.COLOUR_RGB_RED);//Blockly.Msg.senseBox_basic_red
+        this.appendValueInput("GREEN", 'Number')
+              .appendField(Blockly.Msg.COLOUR_RGB_GREEN);//Blockly.Msg.senseBox_basic_green
+        this.appendValueInput("BLUE", 'Number')
+              .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.senseBox_rgb_led_tip);
+    this.setHelpUrl('https://www.mcubase.de');
   }
 };
 
@@ -215,7 +235,7 @@ Blockly.Blocks['mcubase_serial_print'] = {
     this.setNextStatement(true, null);
     this.setColour(Blockly.Blocks.mcubase.HUE);
     this.setTooltip(Blockly.Msg.mcubase_serial_tip);
-    this.setHelpUrl('https://sensebox.de/books');
+    this.setHelpUrl('https://www.mcubase.de');
   }
 };
 

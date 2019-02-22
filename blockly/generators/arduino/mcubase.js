@@ -74,6 +74,18 @@ Blockly.Arduino.mcubase_foto = function() {
     return [code ,Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.mcubase_rgb_led = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  var red = Blockly.Arduino.valueToCode(this, 'RED', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var green = Blockly.Arduino.valueToCode(this, 'GREEN', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  var blue = Blockly.Arduino.valueToCode(this, 'BLUE', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  Blockly.Arduino.definitions_['define_rgb_led'+dropdown_pin] = '#include <Adafruit_NeoPixel.h>\n Adafruit_NeoPixel rgb_led_'+ dropdown_pin +' = Adafruit_NeoPixel(1,'+ dropdown_pin +',NEO_GRB + NEO_KHZ800);\n';
+  Blockly.Arduino.setups_['setup_rgb_led'+dropdown_pin] = 'rgb_led_'+ dropdown_pin+ '.begin();';
+  var code = 'rgb_led_'+ dropdown_pin +'.setPixelColor(0,rgb_led_'+ dropdown_pin +'.Color('+ green +',' + red +',' + blue +'));\n';
+  code += 'rgb_led_'+ dropdown_pin +'.show();';
+  return code;
+};
+
 /*
 ----------------------------------Ausgabe--------------------------------------------------
 */
