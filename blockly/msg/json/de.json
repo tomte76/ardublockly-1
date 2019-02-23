@@ -5,7 +5,7 @@
 		"locale": "de",
 		"messagedocumentation" : "qqq"
 	},
-	"VARIABLES_DEFAULT_NAME": "variable",
+	"VARIABLES_DEFAULT_NAME": "Element",
 	"TODAY": "Heute",
 	"DUPLICATE_BLOCK": "Block duplizieren",
 	"ADD_COMMENT": "Kommentar hinzufügen",
