@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-RUN echo "20190110" > /etc/version-ardublocky-image
-
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN rm -f /etc/localtime; ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -24,6 +22,9 @@ RUN pyinstaller --version
 
 # Add Build-User
 RUN adduser --gecos 'Ardublockly Build' --disabled-password build
+
+# Trigger small rebuild
+RUN echo "20190223" > /etc/version-ardublocky-image
 
 # Ardublocky GIT & Build
 RUN su - build -c "git clone https://github.com/tomte76/ardublockly-1.git"
