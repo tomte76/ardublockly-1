@@ -206,15 +206,27 @@ Blockly.Blocks['mcubase_rgb_led'] = {
     .appendField(Blockly.Msg.senseBox_rgb_led)
     .appendField("PIN:")
     .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), "PIN")
+    .appendField(new Blockly.FieldDropdown([
+                       ['1x LED', '1'],
+                       ['2x LED', '2'],
+                       ['3x LED', '3'],
+                       ['4x LED', '4'],
+                       ['5x LED', '5'],
+                       ['6x LED', '6'],
+                       ['7x LED', '7'],
+                       ['8x LED', '8'],
+                     ]), Blockly.Msg.mcubase_rgb_count)
+    this.appendValueInput("POS", 'Number')
+    .appendField(Blockly.Msg.mcubase_rgb_position);
     this.appendValueInput("RED", 'Number')
-    .appendField(Blockly.Msg.COLOUR_RGB_RED);//Blockly.Msg.senseBox_basic_red
+    .appendField(Blockly.Msg.COLOUR_RGB_RED);
     this.appendValueInput("GREEN", 'Number')
-    .appendField(Blockly.Msg.COLOUR_RGB_GREEN);//Blockly.Msg.senseBox_basic_green
+    .appendField(Blockly.Msg.COLOUR_RGB_GREEN);
     this.appendValueInput("BLUE", 'Number')
     .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.senseBox_rgb_led_tip);
+    this.setTooltip(Blockly.Msg.mcubase_rgb_led_tip);
     this.setHelpUrl('https://www.mcubase.de');
   }
 };

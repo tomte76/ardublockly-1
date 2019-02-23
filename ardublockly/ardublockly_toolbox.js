@@ -26,6 +26,28 @@ Ardublockly.TOOLBOX_XML =
     '  <sep></sep>' +
     '   <category id="catmcubase_Output" name="mcubase Ausgabe" colour="120">' +
     '      <block type="mcubase_led"></block>' +
+    '      <block type="mcubase_rgb_led">' +
+    '        <value name="POS">' +
+    '          <block type="math_number">' +
+    '            <field name="NUM">0</field>' +
+    '          </block>' +
+    '        </value>' +
+    '        <value name="RED">' +
+    '          <block type="math_number">' +
+    '            <field name="NUM">0</field>' +
+    '          </block>' +
+    '        </value>' +
+    '        <value name="GREEN">' +
+    '          <block type="math_number">' +
+    '            <field name="NUM">0</field>' +
+    '          </block>' +
+    '        </value>' +
+    '        <value name="BLUE">' +
+    '          <block type="math_number">' +
+    '            <field name="NUM">0</field>' +
+    '          </block>' +
+    '        </value>' +
+    '      </block>' +
     '      <block type="mcubase_piezo"></block>' +
     '      <block type="mcubase_serial_print"></block>' +
     '      <block type="mcubase_interval_timer"></block>' +
