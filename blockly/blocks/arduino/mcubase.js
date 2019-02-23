@@ -201,21 +201,22 @@ Blockly.Blocks['mcubase_piezo'] = {
 
 Blockly.Blocks['mcubase_rgb_led'] = {
   init: function() {
-    this.setColour(Blockly.Blocks.sensebox.HUE);
+    this.setColour(Blockly.Blocks.mcubase.HUE);
     this.appendDummyInput()
-    .appendField(Blockly.Msg.senseBox_rgb_led)
+    .appendField(Blockly.Msg.mcubase_rgb_led)
     .appendField("PIN:")
     .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), "PIN")
+    .appendField(Blockly.Msg.mcubase_rgb_count)
     .appendField(new Blockly.FieldDropdown([
-                       ['1x LED', '1'],
-                       ['2x LED', '2'],
-                       ['3x LED', '3'],
-                       ['4x LED', '4'],
-                       ['5x LED', '5'],
-                       ['6x LED', '6'],
-                       ['7x LED', '7'],
-                       ['8x LED', '8'],
-                     ]), Blockly.Msg.mcubase_rgb_count)
+                       ['1', '1'],
+                       ['2', '2'],
+                       ['3', '3'],
+                       ['4', '4'],
+                       ['5', '5'],
+                       ['6', '6'],
+                       ['7', '7'],
+                       ['8', '8'],
+                     ]), "COUNT")
     this.appendValueInput("POS", 'Number')
     .appendField(Blockly.Msg.mcubase_rgb_position);
     this.appendValueInput("RED", 'Number')

@@ -355,6 +355,8 @@
 	"mcubase_interval_timer": "Messintervall",
 	"mcubase_interval": "ms",
 	"mcubase_interval_timer_tip": "Intervall",
+	"mcubase_rgb_count" : "LED count:",
+	"mcubase_rgb_position" : "LED position:",
 	"cases_do": "Führe aus",
 	"cases_condition": "Fall (Variable) = ",
 	"cases_switch": "Variable",
