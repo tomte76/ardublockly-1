@@ -7,7 +7,7 @@
 	},
 	"VARIABLES_DEFAULT_NAME": "variable",
 	"TODAY": "Heute",
-	"DUPLICATE_BLOCK": "Doppelter Block",
+	"DUPLICATE_BLOCK": "Block duplizieren",
 	"ADD_COMMENT": "Kommentar hinzufügen",
 	"REMOVE_COMMENT": "Kommentar entfernen",
 	"EXTERNAL_INPUTS": "Externe Schnittstellen",

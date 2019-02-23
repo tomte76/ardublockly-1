@@ -84,7 +84,7 @@ Blockly.Arduino.mcubase_rgb_led = function() {
   Blockly.Arduino.definitions_['define_rgb_led'+dropdown_pin] = '#include <Adafruit_NeoPixel.h>\nAdafruit_NeoPixel rgb_led_'+ dropdown_pin +' = Adafruit_NeoPixel('+ dropdown_count +','+ dropdown_pin +',NEO_GRB + NEO_KHZ800);\n';
   Blockly.Arduino.setups_['setup_rgb_led'+dropdown_pin] = 'rgb_led_'+ dropdown_pin+ '.begin();';
   var code = 'rgb_led_'+ dropdown_pin +'.setPixelColor('+ pos +',rgb_led_'+ dropdown_pin +'.Color('+ red +',' + green +',' + blue +'));\n';
-  code += 'rgb_led_'+ dropdown_pin +'.show();';
+  code += 'rgb_led_'+ dropdown_pin +'.show();\n';
   return code;
 };
 
