@@ -168,8 +168,8 @@ Blockly.Arduino.mcubase_display_plotDisplay = function() {
 /*adapted senseBox Display Blocks end*/
 
 Blockly.Arduino.mcubase_interval_timer = function(block) {
-  var interval = this.getFieldValue('interval');
-  Blockly.Arduino.variables_['define_interval_variables'] = 'const long interval = '+interval+';\nlong time_start = 0;\nlong time_actual = 0;';
+  var interval = Blockly.Arduino.valueToCode(this, 'INTER', Blockly.Arduino.ORDER_ATOMIC) || '0'
+  Blockly.Arduino.variables_['define_interval_variables'] = 'long interval = '+interval+';\nlong time_start = 0;\nlong time_actual = 0;';
   var branch = Blockly.Arduino.statementToCode(block, 'DO');
   var code = 'time_start = millis();\n';
   code += 'if (time_start > time_actual + interval) {\n  time_actual = millis();\n'

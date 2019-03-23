@@ -407,9 +407,7 @@ Blockly.Blocks['mcubase_interval_timer'] = {
     this.setColour(Blockly.Blocks.mcubase.HUE);
     this.appendDummyInput()
     .appendField(Blockly.Msg.mcubase_interval_timer);
-    this.appendDummyInput()
-    .setAlign(Blockly.ALIGN_LEFT)
-    .appendField(new Blockly.FieldTextInput("1000"), "interval")
+    this.appendValueInput("INTER", 'Number')
     .appendField(Blockly.Msg.mcubase_interval);
     this.appendStatementInput('DO')
     .setCheck(null);
