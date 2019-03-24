@@ -11,6 +11,16 @@ goog.provide('Blockly.Arduino.mcubase');
 
 goog.require('Blockly.Arduino');
 
+function makeid(length) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
 
 /*
 ----------------------------------Sensoren--------------------------------------------------
@@ -168,12 +178,14 @@ Blockly.Arduino.mcubase_display_plotDisplay = function() {
 /*adapted senseBox Display Blocks end*/
 
 Blockly.Arduino.mcubase_interval_timer = function(block) {
+  var var_id = makeid(5);
   var interval = Blockly.Arduino.valueToCode(this, 'INTER', Blockly.Arduino.ORDER_ATOMIC) || '0'
-  Blockly.Arduino.variables_['define_interval_variables'] = 'long interval = '+interval+';\nlong time_start = 0;\nlong time_actual = 0;';
+  Blockly.Arduino.variables_['define_interval_variables_'+var_id+''] = 'long time_start_'+var_id+' = 0;\nlong time_actual_'+var_id+' = 0;';
   var branch = Blockly.Arduino.statementToCode(block, 'DO');
-  var code = 'time_start = millis();\n';
-  code += 'if (time_start > time_actual + interval) {\n  time_actual = millis();\n'
+  var code = 'long interval_'+var_id+' = '+interval+';\n';
+  code += 'time_start_'+var_id+' = millis();\n';
+  code += 'if (time_start_'+var_id+' > time_actual_'+var_id+' + interval_'+var_id+') {\n  time_actual_'+var_id+' = millis();\n';
   code += branch;
-  code += '}\n'
+  code += '}\n';
   return code;
 };

@@ -52,11 +52,11 @@ Ardublockly.TOOLBOX_XML =
     '      <block type="mcubase_serial_print"></block>' +
     '   </category>' +
     '  <sep></sep>' +
-    '   <category id="catmcubase_Logic" name="mcubase Logik" colour="120">' +
+    '   <category id="catmcubase_Logic" name="mcuBase Logik" colour="120">' +
     '      <block type="mcubase_interval_timer">' +
     '        <value name="INTER">' +
-    '          <block type="math_number">' +
-    '            <field name="NUM">1000</field>' +
+    '          <block type="variables_get">' +
+    '            <field name="VAR">Intervall</field>' +
     '          </block>' +
     '        </value>' +
     '      </block>' +
