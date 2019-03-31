@@ -115,14 +115,17 @@ Blockly.Arduino.mcubase_serial_print = function() {
   return code;
 };
 
-/*adapted senseBox Display Blocks. Removed SPI, remove sensblock I2C controls*/
+/*adapted senseBox Display Blocks. Removed SPI, remove sensblock I2C controls
+  cheap china displays do not have reset pin, therefore Removed
+  using new SSD1306 constructor to define display size
+  changed i2c address to 0x3C matching the china displays                     */
 
 Blockly.Arduino.mcubase_display_beginDisplay = function() {
   Blockly.Arduino.includes_['library_wire'] = '#include <Wire.h>';
   Blockly.Arduino.includes_['library_AdafruitGFX'] = '#include <Adafruit_GFX.h>';
   Blockly.Arduino.includes_['library_AdafruitSSD1306'] = '#include <Adafruit_SSD1306.h>';
-  Blockly.Arduino.userFunctions_['define_display'] = '#define OLED_RESET 4\nAdafruit_SSD1306 display(OLED_RESET);';
-  Blockly.Arduino.setups_['mcubase_display_begin'] = 'delay(2000);\ndisplay.begin(SSD1306_SWITCHCAPVCC, 0x3D);\ndisplay.display();\ndelay(100);\ndisplay.clearDisplay();';
+  Blockly.Arduino.userFunctions_['define_display'] = '#define OLED_RESET -1\nAdafruit_SSD1306 display(128, 64, &Wire, OLED_RESET);';
+  Blockly.Arduino.setups_['mcubase_display_begin'] = 'delay(2000);\ndisplay.begin(SSD1306_SWITCHCAPVCC, 0x3C);\ndisplay.display();\ndelay(100);\ndisplay.clearDisplay();';
   var code = '';
   return code;
 };
