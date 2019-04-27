@@ -24,7 +24,7 @@ RUN pyinstaller --version
 RUN adduser --gecos 'Ardublockly Build' --disabled-password build
 
 # Trigger small rebuild
-RUN echo "20190223" > /etc/version-ardublocky-image
+RUN echo "20190427002" > /etc/version-ardublocky-image
 
 # Ardublocky GIT & Build
 RUN su - build -c "git clone https://github.com/tomte76/ardublockly-1.git"
