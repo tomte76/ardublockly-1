@@ -48,11 +48,12 @@ Blockly.Arduino.mcubase_sensor_temp_hum = function(){
   var sensor_pin = this.getFieldValue('PIN');
   var sensor_mode = this.getFieldValue('MODE');
   Blockly.Arduino.includes_['library_AdafruitDHT'] = '#include "DHT.h"';
-  Blockly.Arduino.userFunctions_['define_dht'] = 'DHT dht(sensor_pin, dht_type);';
+  Blockly.Arduino.userFunctions_['define_dht'] = 'DHT dht('+sensor_pin+','+dht_type+');';
   Blockly.Arduino.setups_['mcubase_sensor_temp_hum'] = 'dht.begin();';
   var code = 'dht.'+sensor_mode+'()';
   return [code ,Blockly.Arduino.ORDER_ATOMIC];
 };
+
 
 /*
 ----------------------------------Basics--------------------------------------------------

@@ -120,16 +120,13 @@ Blockly.Blocks['mcubase_sensor_temp_hum'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(Blockly.Msg.mcubase_temp_hum);
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
+    this.appendDummyInput('type')
         .appendField("DHT Typ:")
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.mcubase_dht11,"DHT11"], [Blockly.Msg.mcubase_dht21,"DHT21"], [Blockly.Msg.mcubase_dht22,"DHT21"]]), "TYPE");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(new Blockly.FieldDropdown([["DHT11","DHT11"], ["DHT21","DHT21"], ["DHT22","DHT22"]]), "TYPE");
+    this.appendDummyInput('pin')
         .appendField("PIN:")
-        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.analogPins), "PIN");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), "PIN");
+    this.appendDummyInput('mode')
         .appendField("Modus:")
         .appendField(new Blockly.FieldDropdown([["Temperatur","readTemperature"], ["Luftfeuchtigkeit","readHumidity"]]), "MODE");
     this.setOutput(true, Blockly.Types.NUMBER.output);
