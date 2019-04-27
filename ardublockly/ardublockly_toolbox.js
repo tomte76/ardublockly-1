@@ -20,6 +20,9 @@ Ardublockly.TOOLBOX_XML =
     '      </block>' +
     '      <block type="mcubase_sensor_sound"></block>' +
     '      <block type="mcubase_foto"></block>' +
+    '   </category>' +
+    '  <sep></sep>' +
+    '   <category id="catmcubase_Input" name="mcubase Eingabe" colour="120">' +
     '      <block type="mcubase_button"></block>' +
     '      <block type="mcubase_poti"></block>' +
     '   </category>' +

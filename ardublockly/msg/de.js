@@ -73,7 +73,7 @@ Ardublockly.LOCALISED_TEXT = {
   copy_paste_mcu: "Kopiere die .BIN Datei auf deine senseBox MCU. <br> Wird die senseBox MCU im Explorer nicht angezeigt mache eine Doppelklick auf den Roten Reset Button.<br>"+
                   "<img class='animated-gif' src=\"img/copy_to_mcu.gif\"> <br>" +
                   "Benötigst du mehr Information und Hilfe schau ins <a href=\"https://sensebox.github.io/books-v2/blockly/de/\" target=\"_blank\">Blockly für senseBox Buch</a>",
-  
+
   /* Alerts */
   loadNewBlocksTitle: "Neue Blöcke laden?",
   loadNewBlocksBody: "Das Laden der neuen XML-Datei ersetzt die aktuellen Blöcke.<br>" +
@@ -109,6 +109,7 @@ Ardublockly.LOCALISED_TEXT = {
   catsenseBoxOutput_Web:"Web",
   catmcubase_Sensor:"mcuBase Sensoren",
   catmcubase_Output:"mcuBase Ausgabe",
+  catmcubase_Input:"mcuBase Eingabe",
   catmcubaseDisplay:"Display",
   catmcubaseOutput_SD:"SD",
   catmcubaseOutput_Web:"Web",
