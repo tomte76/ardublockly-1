@@ -56,7 +56,7 @@ Blockly.Arduino.mcubase_sensor_temp_hum = function(){
 
 Blockly.Arduino.mcubase_sensor_pressure = function() {
   var dropdown_name = this.getFieldValue('NAME');
-  var referencePressure = this.getFieldValue('referencePressure');
+  var referencePressure = this.getFieldValue('referencePressure')*100;
   Blockly.Arduino.includes_['library_AdafruitBMP180'] = '#include <Adafruit_BMP085.h>';
   Blockly.Arduino.userFunctions_['define_pressure'] = 'Adafruit_BMP085 bmp;';
   Blockly.Arduino.setups_['mcubase_bmp_sensor'] = 'bmp.begin();';

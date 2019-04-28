@@ -197,9 +197,9 @@ Blockly.Blocks['mcubase_sensor_pressure'] = {
       console.log('update shape');
       this.appendDummyInput('extraField')
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.mcubase_pressure_referencePressure)
+        .appendField("Referenzdruck")
         .appendField(new Blockly.FieldTextInput("1013"), "referencePressure")
-        .appendField(Blockly.Msg.mcubase_pressure_referencePressure_dim);
+        .appendField("mbar");
     }
 
     if ((input == 'Pressure' || input == 'Temperature') && extraFieldExist != null){
