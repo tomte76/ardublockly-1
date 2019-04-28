@@ -207,7 +207,7 @@ Blockly.Blocks['mcubase_sensor_pressure'] = {
     }
    },
   getBlockType: function() {
-    return Blockly.Types.LARGE_NUMBER;
+    return Blockly.Types.DECIMAL;
   },
 };
 /*
