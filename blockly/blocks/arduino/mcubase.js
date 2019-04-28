@@ -139,6 +139,77 @@ Blockly.Blocks['mcubase_sensor_temp_hum'] = {
   },
 };
 
+Blockly.Blocks['mcubase_sensor_pressure'] = {
+  init: function() {
+    var dropdownOptions = [[Blockly.Msg.mcubase_pressure,"Pressure"], [Blockly.Msg.mcubase_temp,"Temperature"], [Blockly.Msg.mcubase_gps_alt,"Altitude"]];
+    var dropdown = new Blockly.FieldDropdown(dropdownOptions, function(option) {
+      var input = (option == 'Pressure') || (option ==  'Temperature') || (option == 'Altitude');
+      this.sourceBlock_.updateShape_(input);
+      });
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.mcubase_pressure_sensor);
+       this.setOutput(true, "Number");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.mcubase_value)
+        .appendField(dropdown, "NAME");
+        /*.appendField(new Blockly.FieldDropdown([[Blockly.Msg.senseBox_pressure,"Pressure"], [Blockly.Msg.senseBox_temp,"Temperature"], [Blockly.Msg.senseBox_gps_alt,"Altitude"]]), function(option) {
+          var input = (option == 'Pressure') || (option ==  'Temperature') || (option == 'Altitude');
+          this.sourceBlock_.updateShape_(input);
+          }, "NAME");*/
+    this.setColour(Blockly.Blocks.mcubase.HUE);
+    this.setOutput(true, Blockly.Types.NUMBER.output);
+    this.setTooltip(Blockly.Msg.mcubase_pressure_tip);
+    this.setHelpUrl('https://www.mcubase.de');
+  },
+  /**
+   * Parse XML to restore the number of pins available.
+   * @param {!Element} xmlElement XML storage element.
+   * @this Blockly.Block
+
+  domToMutation: function(xmlElement) {
+    var input = (xmlElement.getAttribute('port'));
+
+  },*
+  /**
+   * Create XML to represent number of pins selection.
+   * @return {!Element} XML storage element.
+   * @this Blockly.Block
+   */
+  mutationToDom: function() {
+    var container = document.createElement('mutation');
+    var input = this.getFieldValue('NAME');
+    this.updateShape_(input);
+    container.setAttribute('NAME', input);
+    return container;
+  },
+  /**
+   * Modify this block to have the correct number of pins available.
+   * @param {boolean}
+   * @private
+   * @this Blockly.Block
+   */
+  updateShape_: function() {
+    var extraFieldExist = this.getFieldValue('referencePressure');
+    console.log(extraFieldExist);
+    var input = this.getFieldValue('NAME');
+    if (input == 'Altitude' && extraFieldExist == null){
+      console.log('update shape');
+      this.appendDummyInput('extraField')
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.mcubase_pressure_referencePressure)
+        .appendField(new Blockly.FieldTextInput("1013"), "referencePressure")
+        .appendField(Blockly.Msg.mcubase_pressure_referencePressure_dim);
+    }
+
+    if ((input == 'Pressure' || input == 'Temperature') && extraFieldExist != null){
+        this.removeInput('extraField');
+    }
+   },
+  getBlockType: function() {
+    return Blockly.Types.LARGE_NUMBER;
+  },
+};
 /*
 ----------------------------------Basics--------------------------------------------------
 */

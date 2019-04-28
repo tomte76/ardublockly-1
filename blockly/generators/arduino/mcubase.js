@@ -54,6 +54,19 @@ Blockly.Arduino.mcubase_sensor_temp_hum = function(){
   return [code ,Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.mcubase_sensor_pressure = function() {
+  var dropdown_name = this.getFieldValue('NAME');
+  var referencePressure = this.getFieldValue('referencePressure');
+  Blockly.Arduino.includes_['library_AdafruitBMP180'] = '#include <Adafruit_BMP085.h>';
+  Blockly.Arduino.userFunctions_['define_pressure'] = 'Adafruit_BMP085 bmp;';
+  Blockly.Arduino.setups_['mcubase_bmp_sensor'] = 'bmp.begin();';
+  if (dropdown_name == 'Pressure' || dropdown_name == 'Temperature'){
+    var code ='bmp.read' + dropdown_name + '()';
+  } else if (dropdown_name == 'Altitude') {
+    var code = 'bmp.readAltitude(' + referencePressure + ')';
+  }
+  return [code ,Blockly.Arduino.ORDER_ATOMIC];
+};
 
 /*
 ----------------------------------Basics--------------------------------------------------
